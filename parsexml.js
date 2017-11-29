@@ -4,6 +4,7 @@ var fs = require('fs'),
 
 var parser = new xml2js.Parser();
 var viewControllers = [];
+var storyboardPath = './platforms/ios/nativescriptstoryboard/Main.storyboard';
 
 function addButtonToView(vcObj, button) {
     var buttonType = button.$.buttonType;
@@ -75,7 +76,7 @@ function addLabelToView(vcObj, label) {
     vcObj.views.push(labelObj);
 }
 
-fs.readFile('./platforms/ios/nativescriptstoryboard/Main.storyboard', function(err, data) {
+fs.readFile(storyboardPath, function(err, data) {
     parser.parseString(data, function (err, result) {
         
         var scenes = result.document.scenes[0].scene;
@@ -132,7 +133,6 @@ fs.readFile('./platforms/ios/nativescriptstoryboard/Main.storyboard', function(e
                 xmlObj.Page.AbsoluteLayout[view.type] = [];
             }     
 	  		xmlObj.Page.AbsoluteLayout[view.type].push(view.xmlObj);
-	  		// actionName = view.action;
 	  	}
       	var xml = builder.create(xmlObj);
 
