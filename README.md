@@ -1,6 +1,6 @@
 The following project is on a rather POC stage. Its main target is to allow NativeScript developers to leverage the power of iOS storyboards for building the UI. What the `parsexml.js` script is doing is parsing the storyboards `xml` files to JS objects and then to NativeScript `xml` and corresponding `js` files.
 
-#####So far the script translates only Button and Label elements and uses their absolute position instead of constraints. 
+####So far the script translates only Button and Label elements and uses their absolute position instead of constraints. 
 
 ## Usage
 
@@ -30,7 +30,9 @@ If you select any of the buttons there is a field called ``Action``. This will c
 
 ![](./action.png)
 
-You can move the buttons and labels around the view as well as change their titles, title and background colors. 
+You can move the buttons and labels around the view as well as change their titles, title and background colors as well as play with the segues.
+
+![](./storyboard-gif.gif)
 
 5.Copy **parsexml.js** file in your NS project root folder.
 
@@ -42,13 +44,28 @@ You can move the buttons and labels around the view as well as change their titl
 
 ``node parsexml.js``
 
-9. The ``xml`` and ``js`` files should be generated in the ``app`` folder. Run ``tns run ios``:
+9.The ``xml`` and ``js`` files should be generated in the ``app`` folder. You will find out they are named just as the ``View Name`` fields we populated and the ``main-page.js`` contains functions named just as our buttons ``Action fields``.
+
+![](./generated-files.png)
+
+![](./generated-js.png)
+
+10.Run ``tns run ios``:
 
 ![](./ios.png)
 
-10.Run ``tns run android``
+11.Run ``tns run android``
 
 ![](./android.png)
+
+###The segues has taken effect as well!
+
+![](./ios-gif.gif)
+
+![](./android-gif.gif)
+
+
+
 
 
 
