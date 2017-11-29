@@ -58,7 +58,7 @@ You can move the buttons and labels around the view as well as change their titl
 
 ![](./android.png)
 
-###The segues has taken effect as well!
+##The segues have taken effect as well!
 
 ![](./ios-gif.gif)
 
